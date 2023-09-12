@@ -1,27 +1,44 @@
-# Assignment Submission TimelyAI
+# Assignment Submission - TimelyAI
 
-Assignment was to recreate the following template using pillow (python) 
+The assignment required the recreation of a specific template using the Python Pillow library. Here's a summary of the task and how to run the provided code.
 
-https://gbp-posts-templates.s3.amazonaws.com/2023-09-08/tmp/Oops-Upside-Yo-Head-d3f1c195-bfb0-48d3-9bf4-369f9029bf02.jpg
+## Task Description
 
-Input is an img file, brand name (text) and service name (text)
-Output should be the above template
+The task was to create an output template using Pillow in Python, based on the provided input:
 
-## How to run the file
+- **Input**: Image file, brand name (text), and service name (text)
+- **Output**: The specified template
 
-- First Clone the Repo using the following command
+## How to Run the Code
+
+Follow these steps to run the code:
+
+1. **Clone the Repository**:
+
 ```bash
 git clone https://github.com/sudhnsh/assignmenttimely
 ```
-- Edit the information in inputdata.py to your prefrence (inputdata.py contains text1, text2, imagepath and font). I have added 2 fonts for your prefrence
 
-- Run the following command for getting all the requirements
+2. **Edit Input Data**:
+
+Modify the information in the `inputdata.py` file according to your preferences. This file contains the following parameters:
+
+- `text1`: Brand name (text)
+- `text2`: Service name (text)
+- `imagepath`: Path to the image file
+- `font`: Choose from two available fonts for text rendering.
+
+3. **Install Requirements**:
+
+Use the following command to install all the necessary requirements:
 
 ```bash
 pip install -r requirement.txt 
 ```
 
-- Run the following command to get the output file
+4. **Generate the Output**:
+
+To generate the output file, execute one of the following commands:
 
 ```bash
 python main.py
@@ -31,4 +48,15 @@ OR
 ```bash
 python3 main.py
 ```
+
+## Methodology
+
+The code follows this methodology:
+
+1. It starts by adding a gray rectangle to the image.
+2. Then, it adds the provided image to the template.
+3. The brand name (text1) is added.
+4. Finally, the service name (text2) is added to the template. The font size adjusts based on the length of the text.
+
+Please note that this code is designed to create a template based on the provided input, including brand and service names, and is implemented in Python using the Pillow library.
 
