@@ -1,9 +1,9 @@
 from PIL import Image, ImageDraw, ImageFont,ImageColor    
-
+from inputdata import *
 def findfont(text_bbox,box_width,box_height,font,fontsize,text,draw):
     while text_bbox[2] > box_width-10 or text_bbox[3] > box_height:
         fontsize -= 1
-        font = ImageFont.truetype("font\Montserrat-Light.ttf", fontsize)
+        font = ImageFont.truetype(font_used, fontsize)
         text_bbox = draw.textbbox((0, 0), text, font=font)
     return font
 
@@ -26,7 +26,7 @@ def imagetranform(text1,text2,path):
     # Adding the Image
     result.paste(image, (left, top))
     # First font calculation
-    font = ImageFont.truetype("font\Montserrat-Light.ttf", 45)
+    font = ImageFont.truetype(font_used, 45)
     draw = ImageDraw.Draw(result)
     draw.rectangle((0, height+50, new_width/2, height+100), fill=ImageColor.getrgb("#dfcad1"))
     draw.rectangle((new_width/2, height+50, new_width, height+100), fill=ImageColor.getrgb("#2b1e16"))
@@ -36,14 +36,12 @@ def imagetranform(text1,text2,path):
     draw.text((new_width/4,new_height-270), text1, font=font, fill= ImageColor.getrgb("#fffbfe"),anchor='mm') 
     box_width,box_height=new_width,250
     # Second font calculation
-    font = ImageFont.truetype("font\Montserrat-Light.ttf", 150)
+    font = ImageFont.truetype(font_used, 150)
     text_bbox = draw.textbbox((0, 0), text2, font=font)
     font = findfont(text_bbox,box_width,box_height,font,150,text2,draw)
     # Adding Text2
     draw.text((new_width/2,height+250), text2, font=font, fill= ImageColor.getrgb("#48433f"),anchor='mm') 
     result.save('output.png')
 
-text1="This is the first Text"
-text2="This is the second Text"
-path="input.jpg"
+
 imagetranform(text1,text2,path)
