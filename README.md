@@ -53,10 +53,11 @@ python3 main.py
 
 The code follows this methodology:
 
-1. It starts by adding a gray rectangle to the image.
-2. Then, it adds the provided image to the template.
-3. The brand name (text1) is added.
-4. Finally, the service name (text2) is added to the template. The font size adjusts based on the length of the text.
+1. It starts with fixing the ratio of the image and fixing the image size as 1080x1080 
+2. Then, adding a gray rectangle to the image.
+3. Then, it adds the provided image to the template.
+4. The brand name (text1) is added.
+5. Finally, the service name (text2) is added to the template. The font size adjusts based on the length of the text.
 
 Please note that this code is designed to create a template based on the provided input, including brand and service names, and is implemented in Python using the Pillow library.
 
