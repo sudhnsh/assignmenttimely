@@ -47,7 +47,7 @@ def imagetranform(text1,text2,path):
     text_bbox = draw.textbbox((0, 0), text2, font=font)
     font = findfont(text_bbox,box_width,box_height,font,150,text2,draw)
     # Adding Text2
-    draw.text((540,height+250), text2, font=font, fill= ImageColor.getrgb("#48433f"),anchor='mm') 
+    draw.text((540,height+(1080-height+100)/2), text2, font=font, fill= ImageColor.getrgb("#48433f"),anchor='mm') 
     result.save('output.png')
 
 
